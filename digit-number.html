@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Digit Counter</title>
+</head>
+<body>
+    <h1>Number Digit Counter</h1>
+    <p>Enter a number between 0 and 1,000:</p>
+    <input type="number" id="numberInput">
+    <button onclick="countDigits()">Count Digits</button>
+    <p id="result"></p>
+
+    <script>
+        function countDigits() {
+            // Get the input element
+            let inputElement = document.getElementById("numberInput");
+
+            // Get the value entered by the user
+            let number = parseInt(inputElement.value);
+
+            // Check if the entered number is within the range of 0 and 1,000
+            if (number >= 0 && number <= 1000) {
+                // Convert the number to a string and count its length (number of digits)
+                let digitCount = number.toString().length;
+                document.getElementById("result").textContent = "The number has " + digitCount + " digits.";
+            } else {
+                document.getElementById("result").textContent = "Please enter a number between 0 and 1,000.";
+            }
+        }
+    </script>
+</body>
+</html>

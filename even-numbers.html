@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even Numbers</title>
+</head>
+<body>
+    <h1>Even Numbers</h1>
+    <p>Enter a number:</p>
+    <input type="number" id="numberInput">
+    <button onclick="printEvenNumbers()">Print Even Numbers</button>
+    <p id="result"></p>
+
+    <script>
+        function printEvenNumbers() {
+            // Get the input element
+            let inputElement = document.getElementById("numberInput");
+
+            // Get the numerical value entered by the user
+            let n = parseInt(inputElement.value);
+
+            // Validate input
+            if (isNaN(n)) {
+                document.getElementById("result").textContent = "Please enter a valid number.";
+                return;
+            }
+
+            // Initialize the output string
+            let evenNumbersOutput = "";
+
+            // Loop to print even numbers from 0 to n (inclusive)
+            for (let i = 0; i <= n; i++) {
+                if (i % 2 === 0) {
+                    evenNumbersOutput += i + " ";
+                }
+            }
+
+            document.getElementById("result").textContent = "Even numbers from 0 to " + n + ": " + evenNumbersOutput;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verbal Assessment</title>
+</head>
+<body>
+    <h1>Verbal Assessment</h1>
+    <p>Enter your numerical grade:</p>
+    <input type="number" id="gradeInput">
+    <button onclick="assessGrade()">Assess</button>
+    <p id="result"></p>
+
+    <script>
+        function assessGrade() {
+            // Get the input element
+            let inputElement = document.getElementById("gradeInput");
+
+            // Get the numerical grade entered by the user
+            let grade = parseInt(inputElement.value);
+
+            // Perform the verbal assessment based on the provided key
+            let verbalAssessment = "";
+            if (grade < 55) {
+                verbalAssessment = "BAD";
+            } else if (grade >= 55 && grade <= 64) {
+                verbalAssessment = "PRETTY BAD";
+            } else if (grade >= 65 && grade <= 74) {
+                verbalAssessment = "ALMOST GOOD";
+            } else if (grade >= 75 && grade <= 84) {
+                verbalAssessment = "GOOD";
+            } else if (grade >= 85 && grade <= 94) {
+                verbalAssessment = "VERY GOOD";
+            } else if (grade >= 95) {
+                verbalAssessment = "EXCELLENT";
+            }
+
+            document.getElementById("result").textContent = "Verbal Assessment: " + verbalAssessment;
+        }
+    </script>
+</body>
+</html>

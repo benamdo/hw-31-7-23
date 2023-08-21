@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Card Printer</title>
+</head>
+<body>
+    <h1>Card Printer</h1>
+    <p>Enter a number between 2 and 14:</p>
+    <input type="number" id="numberInput">
+    <button onclick="printCard()">Print Card</button>
+    <p id="result"></p>
+
+    <script>
+        function printCard() {
+            // Get the input element
+            let inputElement = document.getElementById("numberInput");
+
+            // Get the numerical value entered by the user
+            let number = parseInt(inputElement.value);
+
+            // Validate input
+            if (isNaN(number) || number < 2 || number > 14) {
+                document.getElementById("result").textContent = "Please enter a valid number between 2 and 14.";
+                return;
+            }
+
+            // Determine the card based on the user's input
+            let card;
+            switch (number) {
+                case 11:
+                    card = "J";
+                    break;
+                case 12:
+                    card = "Q";
+                    break;
+                case 13:
+                    card = "K";
+                    break;
+                case 14:
+                    card = "A";
+                    break;
+                default:
+                    card = number.toString();
+            }
+
+            document.getElementById("result").textContent = "Your card: " + card;
+        }
+    </script>
+</body>
+</html>
